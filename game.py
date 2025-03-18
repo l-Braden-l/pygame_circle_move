@@ -12,7 +12,6 @@ def handle_events(x1, y1):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             return False, x1, y1
-        keys = pygame.key.get_pressed()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 x1 = -3
@@ -59,6 +58,12 @@ def main():
         pygame.display.flip()
 
         clock.tick(config.FPS)
+
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
 
     pygame.quit()
     sys.exit()
